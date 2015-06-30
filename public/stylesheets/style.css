@@ -1,8 +1,84 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+*{
+	margin: 0px;
+	padding: 0px;
 }
 
-a {
-  color: #00B7FF;
+body{
+	font: 16px Georgia, Serif;
 }
+
+footer{
+	background: #eee;
+	text-align: center;
+}
+
+header, nav, section{
+	background: #eee;
+	text-align: center;
+}
+
+nav span{
+	margin: 0px 10px 0px 0px;
+}
+
+section > div{
+	padding: 20px;
+}
+
+#page-wrap{
+	color: white;
+	margin: 2% auto;
+}
+
+#page-wrap > .main{
+	border: 1px solid #999;
+	color: black;
+	margin-bottom: 1px;
+	padding: 1%;
+}
+
+@media only screen
+ and (min-width: 530px)
+ and (min-device-width: 481px){
+
+ 	body{
+ 		background: #999;
+ 	}
+
+ 	footer{
+ 		clear: both;
+ 		display: block;
+ 	}
+
+ 	nav{
+ 		float: left;
+ 		height: 200px;
+ 		width: 15%;
+ 	}
+
+ 	nav span{
+ 		margin: 0px 100px 0px 0px;
+ 	}
+
+ 	section{
+ 		float: right;
+ 		height: 200px;
+ 		width: 80%;
+ 	}
+ }
+
+ @media only screen
+ and (max-width: 480px){
+ 	body{
+ 		background: #333;
+ 		font-size: xx-large;
+ 	}
+
+ 	footer, input{
+ 		font-size: large;
+ 	}
+
+ 	h2 span, section h3{
+ 		display: none;
+ 	}
+ }
