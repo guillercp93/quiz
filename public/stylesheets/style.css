@@ -12,6 +12,10 @@ footer{
 	text-align: center;
 }
 
+footer a{
+	margin: 50px;
+}
+
 header, nav, section{
 	background: #eee;
 	text-align: center;
