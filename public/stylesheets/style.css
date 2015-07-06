@@ -16,6 +16,10 @@ footer a{
 	margin: 50px;
 }
 
+footer a img{
+	width: 50px;
+}
+
 header, nav, section{
 	background: #eee;
 	text-align: center;
@@ -26,7 +30,13 @@ nav span{
 }
 
 section > div{
+	display: inline-block;
 	padding: 20px;
+}
+
+section img{
+	display: inline-block;
+	width: 100px;
 }
 
 #page-wrap{
