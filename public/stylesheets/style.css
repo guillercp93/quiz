@@ -3,6 +3,11 @@
 	padding: 0px;
 }
 
+a img{
+	float: 10px;
+	width: 50px;
+}
+
 body{
 	font: 16px Georgia, Serif;
 }
@@ -10,6 +15,10 @@ body{
 footer{
 	background: #eee;
 	text-align: center;
+}
+
+footer a{
+	margin: 50px;
 }
 
 header, nav, section{
