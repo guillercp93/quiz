@@ -14,7 +14,7 @@ exports.load = function(req, res, next, quizId) {
 
 //GET /quizes
 exports.index = function(req, res) {
-	var search = ' ';
+	var search = '%';
 	if(req.query.search != undefined)
 	{
 		search = "%" + req.query.search.trim().replace(/\s+/g,"%") + "%";
