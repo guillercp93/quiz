@@ -14,9 +14,10 @@ exports.load = function(req, res, next, quizId) {
 
 //GET /quizes
 exports.index = function(req, res) {
+	var search = ' ';
 	if(req.query.search != undefined)
 	{
-		var search = "%" + req.query.search.trim().replace(/\s+/g,"%") + "%";
+		search = "%" + req.query.search.trim().replace(/\s+/g,"%") + "%";
 	}
 	console.log(search);
 	models.Quiz.findAll({where:["pregunta like ?", search.toLowerCase()], order: 'pregunta ASC'}).then(function(quizes) {
