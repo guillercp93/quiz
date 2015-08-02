@@ -40,6 +40,11 @@ section img{
 	width: 100px;
 }
 
+#ErrorMsgs{
+	color: #f61;
+	font-size: smaller;
+}
+
 #page-wrap{
 	color: white;
 	margin: 2% auto;
