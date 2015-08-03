@@ -3,7 +3,7 @@ var express = require('express'),
 	quizController = require('../controllers/quiz_controller'),
 	commentController = require('../controllers/comment_controller'),
 	sessionController = require('../controllers/session_controller');
-
+	stadisticController = require('../controllers/stadistic_controller');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {title: 'Quiz', errors: []});
@@ -32,6 +32,9 @@ router.delete('/quizes/:quizId(\\d+)', sessionController.loginRequired, quizCont
 router.get('/quizes/:quizId(\\d+)/comments/new', commentController.new);
 router.post('/quizes/:quizId(\\d+)/comments', commentController.create);
 router.get('/quizes/:quizId(\\d+)/comments/:commentId(\\d+)/publish', sessionController.loginRequired, commentController.publish);
+
+/* rutas de estadísticas */
+router.get('/quizes/stadistics', stadisticController.show);
 
 router.get('/author', quizController.author);
 

@@ -9,7 +9,6 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
 var routes = require('./routes/index');
-
 var app = express();
 
 // view engine setup
@@ -36,6 +35,27 @@ app.use(function(req, res, next) {
   //hacer req.session en las vistas
   res.locals.session = req.session;
   next();
+});
+
+//autologout
+app.use(function(req, res, next) {
+  var now = new Date();
+  var temp = req.session.time ? new Date(req.session.time) : new Date();
+
+  if (!req.path.match(/\/login|\/logout/)) {
+    if ((now.getMinutes() - 2) > temp.getMinutes()) {
+      var errors = req.session.errors || 'Sesión caducada ...';
+      req.session.errors = {};
+      res.render('sessions/new', {
+        errors: errors
+      });
+    } else {
+      req.session.time = new Date();
+      next();
+    }
+  } else {
+    next();
+  }
 });
 
 app.use('/', routes);
