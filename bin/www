@@ -7,7 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('quiz:server');
 var fs = require('fs');
-var https = require('https');
+var http = require('http');
 
 /**
  * Certificies Openssl
@@ -28,7 +28,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = https.createServer(app);
+var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
